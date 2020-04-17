@@ -14,7 +14,7 @@ from config import PERSONS, AREAS, STAGES, DAYS, TIMES, ITEMS, WORDS, RUBIS, LAY
 ## assets
 from storybuilder.assets import basic, accessory
 ## local files
-from src.chapter.main import ch_tmp
+from src.plot.main import ch_plot
 
 ## define alias
 W = Writer
@@ -22,23 +22,9 @@ _ = Writer.getWho()
 
 ################################################################
 #
-# Sample step:
-# 1) Create the world
-#       世界を作成する。
-# 2) Create a new chapter
-#       章の作成。
-# 3) Create a episode
-#       エピソード作成。
-# 4) Create a new scene
-#       シーン作成。物語のベース。ここに様々なActionを追加する。
-# 5) Create a new stage
-#       舞台作成。シーンに必須要素
-# 6) Create a new day and time
-#       日時作成。シーンのサブ要素
-# 7) Add a scene plot
-#       シーンプロットの作成。概要のないシーンは原則使えない
-# 8) Add scene actions
-#       シーンアクションの追加。
+#   1.謎の姫騎士VRゲーム
+#   2.自分だけが知っている？
+#   3.彼女を守る為に、くっころされる
 #
 ################################################################
 
@@ -47,7 +33,7 @@ _ = Writer.getWho()
 def create_world():
     """Create a world.
     """
-    w = World("title")
+    w = World("くっころ姫騎士オンライン")
     w.setCommonData()
     w.setAssets(basic.ASSET)
     w.setAssets(accessory.ASSET)
@@ -60,14 +46,14 @@ def create_world():
     # w.entryBlock()
     # w.entryHistory()
     # w.entryLifeNote()
-    w.setOutline("__outline__")
+    w.setOutline("くっころとは女騎士等が捕虜にされるなら殺せと言い出すシチュエーションを表す言葉だ。男子高校生の家に知らない人物から新しいVRゲームが届く。それは女騎士となり迫りくる魔物軍団と戦うというものだったが、圧倒的戦力差で負けてしまい、犯される。現実に戻ると何故か尻穴が痛む。出血していた。だが世間では誰もそんな目に遭ったことを覚えていない。クラスのマドンナもそれで遊ぶと知り、彼女を守ろうとするのだが")
     return w
 
 
 def main(): # pragma: no cover
     w = create_world()
     return w.build(
-            ch_tmp(w),
+            ch_plot(w),
             )
 
 
